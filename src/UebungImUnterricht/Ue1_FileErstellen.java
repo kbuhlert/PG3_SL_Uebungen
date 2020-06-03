@@ -3,22 +3,51 @@ package UebungImUnterricht;
 import java.io.File;
 import java.io.IOException;
 
-public class Ue1_FileErstellen {
-
-    //File Properties = Demo2
+public class Ue1_FileErstellen{
 
     public static void main(String[] args) {
-        File testfile1 = new File("Ue1_Fileattribute.txt");
-        File testfile2 = new File("/");
+        //File Creation = Demo1 (File erstellen und Prüfen, ob erfolgreich erstellt)
+
+        File file1 = new File("UebungImUnterricht.txt");
+        String fileSeparator = System.getProperty("file.separator");    //holt das File-Trennzeichen vom System und hängt dieses an( Windows"\")
+        System.out.println("File Separator: " + fileSeparator);
+        File file2 = new File("C:\\Users" + fileSeparator + "kerst\\Dropbox\\Softwareentwicklung\\Vorlesungen\\Programmieren 3\\test.txt");
+
 
         try {
-            if (testfile1.createNewFile()) {          //mit alt+Enter auf rot unterstrichenen drücken, dann oprion surround wirth try/catch
-                System.out.println(testfile1.getAbsolutePath() + "is created" + testfile1.getName());
+            if(file1.createNewFile()){          //mit alt+Enter auf rot unterstrichenen drücken, dann oprion surround wirth try/catch
+                System.out.println(file1.getAbsolutePath() + "is created" + file1.getName());
             } else {
-                System.out.println("Pfad: " + testfile1.getAbsolutePath() + " Filename: " + testfile1.getName() + "File already exists");
+                System.out.println("Pfad: " + file1.getAbsolutePath() + " Filename: " + file1.getName() + "File already exists");
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        try {
+            if(file2.createNewFile()){          //mit alt+Enter auf rot unterstrichenen drücken, dann oprion surround wirth try/catch
+                System.out.println("is created");
+            } else {
+                System.out.println("File already exists");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        //File direct mit Exception und Pfad erstellen
+
+        try {
+            File fileObjekt = new File("C:\\Users\\kerst\\Dropbox\\Softwareentwicklung\\IntelliJ\\Programmieren3\\Files\\Ue1_FileErstellen.txt");
+            if(fileObjekt.createNewFile()){          //mit alt+Enter auf rot unterstrichenen drücken, dann oprion surround wirth try/catch
+                System.out.println("File erstellt: " + fileObjekt.getName());
+            } else {
+                System.out.println("File already exists");
+            }
+        } catch (IOException e) {
+            System.out.println("Fehler beim Erstellen der Datei");
+            e.printStackTrace();
+        }
+
+
     }
 }
