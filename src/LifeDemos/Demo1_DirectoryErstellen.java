@@ -24,7 +24,7 @@ public class Demo1_DirectoryErstellen {
         //Directory erstellen (file.mkdir()) und den Rückgabe-boolean speichern, damit mit "created" gecheckt werden kann ob erstellen funktioniert hat
        //das File-Objekt das oben erstellt wurde ("file") ruft Methode Directory-Erstellen auf. Diese Methode nimmt den Pfad, den das File-Objekt als Attribut hat und
         //erstellt damit ein neues Verzeichnis
-        boolean created = file.mkdirs();    //todo: Fragen Unterschied Ordner-Verzeichnis-Datei
+        boolean created = file.mkdirs();    //todo: Fragen Unterschied Ordner-Verzeichnis-Datei & Warum brauchen wir hier kein Exception-Handling
         //Überprüfen ob directory erstellt wurde:
         System.out.println(path);
         if (created){

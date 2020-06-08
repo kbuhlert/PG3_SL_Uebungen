@@ -1,0 +1,4 @@
+first Line vom PrintWriter
+second Line vom PrintWriter
+Methode write() wird ausgeführtX
+Und jetzt Methode print() im Vergleich

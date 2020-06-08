@@ -3,7 +3,7 @@ package UebungImUnterricht;
 import java.io.File;
 import java.io.IOException;
 
-public class Ue3_Ausgeben {
+public class Ue3_VerzeichnisFilesAusgeben {
 
     //File Properties = Demo2
 

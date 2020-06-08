@@ -5,7 +5,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class Demo3_BufferedReader {
+public class Demo3_BufferedReader_TextAusgabe {
 
     public static void main(String[] args) throws IOException {
         //File öffnen

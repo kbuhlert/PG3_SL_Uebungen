@@ -1,0 +1,2 @@
+Product{productName='Hose', price=50.5, productCategory='Textil'}
+Product{productName='Shirt', price=22.0, productCategory='Textil'}

@@ -9,13 +9,15 @@ public class Ue1_FileErstellen{
         //File Creation = Demo1 (File erstellen und Prüfen, ob erfolgreich erstellt)
 
         File file1 = new File("UebungImUnterricht.txt");
-        String fileSeparator = System.getProperty("file.separator");    //holt das File-Trennzeichen vom System und hängt dieses an( Windows"\")
+        String fileSeparator = System.getProperty("file.separator");    //holt das File-Trennzeichen vom System und hängt dieses an( Windows"\"),
+                                                // andere Systeme haben aber andere Trennzeichen, wenn im Pfad ein die Trennzeichen als String stehen,
+                                                //dann kann das evtl nicht auf allen Systemen korrekt ausgelesen werden
         System.out.println("File Separator: " + fileSeparator);
         File file2 = new File("C:\\Users" + fileSeparator + "kerst\\Dropbox\\Softwareentwicklung\\Vorlesungen\\Programmieren 3\\test.txt");
 
 
         try {
-            if(file1.createNewFile()){          //mit alt+Enter auf rot unterstrichenen drücken, dann oprion surround wirth try/catch
+            if(file1.createNewFile()){          //mit alt+Enter auf rot unterstrichenen drücken, dann option surround wirth try/catch
                 System.out.println(file1.getAbsolutePath() + "is created" + file1.getName());
             } else {
                 System.out.println("Pfad: " + file1.getAbsolutePath() + " Filename: " + file1.getName() + "File already exists");
