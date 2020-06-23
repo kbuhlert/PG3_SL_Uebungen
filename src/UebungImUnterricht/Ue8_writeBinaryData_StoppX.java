@@ -21,7 +21,7 @@ public class Ue8_writeBinaryData_StoppX {
 
         while (true) {              //while-Schleife ist in Lösung von SH anders, diese ist aber auch korrekt
                                     //SH hat c in Scheife initialisiert
-            char c = (char) System.in.read();                   //Zeichen wird eingelesen
+            char c = (char) System.in.read();                   //Zeichen wird eingelesen (Eingabe bekommt int) und zu char gecastet
             if (c == 'x') {                                      //Test ob Zeichen x (Abbruchbedingung) ist
                 System.out.println("x wurde eingegeben. Prozess wird geschlossen");
                 break;                                           //While-Schleife wird beendet wenn Zeichen = x
