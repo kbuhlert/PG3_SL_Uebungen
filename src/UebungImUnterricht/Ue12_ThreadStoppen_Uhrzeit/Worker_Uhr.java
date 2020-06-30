@@ -11,16 +11,32 @@ public class Worker_Uhr implements Runnable {
         isRunning = false;
     }
 
+    //EInbau eines Sperrobjektes
+    private static Object lock = new Object();
+
     @Override
     public void run() {
 
         while (true) {
             while (isRunning) {              //for-Schleife wird Ausgeführt solange isRunning true ist, mit requestShutDown wird aus loop gegangen
-                try {                   //Try/Catch wird durch sleep() automatisch eingefordert
-                    Thread.sleep(1000);     //Verzögert die Schritte zwischen der Weiterabwicklung des Threads
+                //jetzt kommt Sperrblock, der Erlaubt, dass Threads nacheinander
+                synchronized (lock) {
                     System.out.println(" " + d.toString());
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    System.out.print("[");
+                    System.out.println(Thread.currentThread().getName() + " ");
+                    System.out.print(d.toString());
+                    System.out.print(", CPUS: ");
+                    System.out.print(Runtime.getRuntime().availableProcessors());
+                    System.out.print(", FreeMem: ");
+                    System.out.print(Runtime.getRuntime().freeMemory());
+                    System.out.print("]");
+                    System.out.println();
+                    try {                   //Try/Catch wird durch sleep() automatisch eingefordert
+                        Thread.sleep(1000);     //Verzögert die Schritte zwischen der Weiterabwicklung des Threads
+
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
             break;

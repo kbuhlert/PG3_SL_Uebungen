@@ -8,10 +8,12 @@ public class Main_Uhr {
 
         Worker_Uhr w1 = new Worker_Uhr();
         Thread t1 = new Thread(w1);
+        Thread t2 = new Thread(w1);
 
         System.out.println("Bitte drücken Sie eine Taste und Enter, um die Uhrzeit zu stoppen.");
 
         t1.start();
+        t2.start();
 
         String str = EingabeStopp.readLine2();
         System.out.println(str);
@@ -22,6 +24,7 @@ public class Main_Uhr {
         }
         try {
             t1.join();              //try-catch wird gefordert, muss generiert werden hgc
+            t2.join();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
