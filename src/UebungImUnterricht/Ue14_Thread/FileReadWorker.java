@@ -20,9 +20,9 @@ public class FileReadWorker extends Worker_Ue14 implements Runnable{
         File file = new File(path);
         FileReader fileReader = new FileReader(file);
         BufferedReader bufferedReader = new BufferedReader(fileReader);
-        String filetext = bufferedReader.readLine();
+        String filetext;
 
-        while (filetext!= null) {
+        while ((filetext = bufferedReader.readLine()) != null) {
             if (shouldRun) {
                 line.add(filetext);
                 System.out.println(filetext);

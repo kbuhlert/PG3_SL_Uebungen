@@ -4,6 +4,12 @@ import java.io.File;
 
 public class Folie23_ListDirectories {
 
+    /*Write a method which lists all filenames of a
+given directory.
+Tip: Check if Directory exists, if given File is a
+directory, to prevent failures. Write a message to
+console if this is the case.*/
+
     public static void main(String[] args) {
 
         String systemTrennzeichen = System.getProperty("file.separator");

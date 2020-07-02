@@ -15,8 +15,6 @@ public class Demo_Main {
 
         t2.join();      //todo: Erklären was join hier macht. Warum wird Prozess nicht beendet? Warum zuerst t2.join()?
         tpw1.stopWorker();
-
-        frw1.stopWorker();
         t1.join();
 
 
