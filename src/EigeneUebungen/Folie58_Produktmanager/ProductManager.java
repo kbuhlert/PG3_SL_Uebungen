@@ -22,16 +22,16 @@ public class ProductManager {
         this.products = new ArrayList();
     }
 
-    public void add(Product p){
+    public void add(Product p) {
         products.add(p);
     }
 
-    public void saveToFile(String path){
+    public void saveToFile(String path) {
         File produktFile = new File(path);
         try {
             FileOutputStream fo = new FileOutputStream(produktFile);
             ObjectOutputStream ois = new ObjectOutputStream(fo);
-            for(Product p:products){
+            for (Product p : products) {
                 ois.writeObject(p);
                 ois.flush();
             }
@@ -44,15 +44,13 @@ public class ProductManager {
         System.out.println("Produkte wurden in Datei geschrieben");
     }
 
-    public List<Product> readFromFile(String path){
+    public List<Product> readFromFile(String path) {
         ArrayList<Product> productsFromFile = new ArrayList<>();
-
         try {
             FileInputStream fis = new FileInputStream(path);
             ObjectInputStream ois = new ObjectInputStream(fis);
             Object neuesObjekt;
-
-            while ((neuesObjekt= ois.readObject()) != null){
+            while ((neuesObjekt = ois.readObject()) != null) {
                 Product p = (Product) ois.readObject();
                 productsFromFile.add(p);
                 System.out.println(p + " wurde hinzugefügt");
@@ -66,7 +64,6 @@ public class ProductManager {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-
         return productsFromFile;
     }
 
